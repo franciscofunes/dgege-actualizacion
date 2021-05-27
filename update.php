@@ -2,9 +2,9 @@
 
 <?php include 'db.php';
 
-$id = (int)$_GET['id'];
+$id = (int)$_GET['ID'];
 
-$sql = "select * from task where id= '$id'";
+$sql = "select * from baseprimari2 where ID= '$id'";
 
 $rows = $db-> query($sql);
 

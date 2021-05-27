@@ -36,12 +36,12 @@ $rows = $db-> query($sql);
             </div>
             <!--Search bar-->
             <div class="col-lg-10 text-center">
-                <h4 >Ingresa contraseña de carga 🔎 </h4> 
+                <h4 >Ingresa código de carga 🔎 </h4> 
                   <form action="search.php" method="post" class="form-group">
-                    <input type="text" placeholder="Ingresa el id de carga y presiona enter" name="search" class="form-control">
+                    <input type="text" placeholder="Ingresa el código de carga y presiona enter" name="search" class="form-control">
                   </form>                
             </div>
-            <!-- DATA TABLE -->
+            <!-- DATA TABLE 
             <div class="col-lg-11 col-lg-offset-1">
                 <table class="table-responsive table-striped table-hover">
                     <thead>
@@ -134,15 +134,7 @@ $rows = $db-> query($sql);
                         </tr>
                             <?php endwhile; ?>
                     </tbody>
-                </table>
-                <!--PAGINATION-->
-                    <nav aria-label="Page navigation example ">
-                        <ul class="pagination justify-content-center">
-                          <?php for ($i = 1; $i <= $pages; $i++): ?>
-                                 <li class="page-item"><a class="page-link" href="?page=<?php echo $i;?>"><?php echo $i; ?></a></li>
-                          <?php endfor; ?>                      
-                        </ul>                    
-                    </nav>                              
+                </table>-->                             
             </div>
         </div>
     </div>
