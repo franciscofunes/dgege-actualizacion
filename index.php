@@ -32,7 +32,6 @@ $rows = $db-> query($sql);
         <div class="row justify-content-center">
             <div class="col-lg-10 col-md-offset-2 mb-5 mt-5 ">
                 <h2 class="text-center mb-5">ACTUALIZACIÓN INFORMACIÓN</h2>
-                <button onclick="print()" type="button" class="btn btn-secondary float-right"><i class="bi bi-printer"></i> Imprimir</button>
             </div>
             <!--Search bar-->
             <div class="col-lg-10 text-center">
