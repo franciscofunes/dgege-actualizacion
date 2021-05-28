@@ -60,7 +60,9 @@ if (isset($_POST['send'])) {
     
 
 
-    $sql2 = "UPDATE baseprimaria2 SET NOMBRE_ESTABLECIMIENTO= '$nombre_escuela' WHERE ID ='$id'";
+    $sql2 = "UPDATE baseprimaria2 SET NOMBRE_ESTABLECIMIENTO= '$nombre_escuela',DE= '$de',TIPO_JORNADA= '$tipo_jornada',  WHERE ID ='$id'";
+
+    $sql3 = "UPDATE `attendee` SET `firstname`=:fname,`lastname`=:lname,`dateofbirth`=:dob,`emailaddress`=:email,`contactnumber`=:contact,`specialty_id`=:specialty WHERE attendee_id = :id ";
 
 
     
