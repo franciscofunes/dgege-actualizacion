@@ -4,13 +4,8 @@
 
     if (isset($_POST['search'])) {
         $pass = htmlspecialchars($_POST['search']);
-
         $sql = "SELECT * FROM baseprimaria2 WHERE PASS_DIRECTOR LIKE '%$pass%' ";
-        //$sql2 = "SELECT * FROM baseprimaria2 WHERE PASS_DIRECTOR LIKE '%$pass%' INNER JOIN usuarios ON baseprimaria2.ID=usuarios.id";
-
-        $rows = $db-> query($sql);
-
-       
+        $rows = $db-> query($sql);      
         
     }
 
@@ -99,47 +94,47 @@
                         <tr>
                         <?php while ($row = $rows ->fetch_assoc()): ?>
                                 <?php if ($row['PASS_DIRECTOR'] === $pass ) { ?>
-                                <th scope="row"><?php echo $row['ID'] ?></th>
-                                <td class="col-md-10"><?php echo $row['NOMBRE_ESTABLECIMIENTO'] ?></td>
-                                <td class="col-md-10"><?php echo $row['DE'] ?></td>
-                                <td class="col-md-10"><?php echo $row['TIPO_JORNADA'] ?></td>
-                                <td class="col-md-10"><?php echo $row['HORARIO'] ?></td>
-                                <td class="col-md-10"><?php echo $row['SALAS_INICIAL'] ?></td>
-                                <td class="col-md-10"><?php echo $row['DIRECCION'] ?></td>
-                                <td class="col-md-10"><?php echo $row['TELEFONO'] ?></td>
-                                <td class="col-md-10"><?php echo $row['NOMBRE_APELLIDO_DIR_TITULAR'] ?></td>
-                                <td class="col-md-10"><?php echo $row['NOMBRE_APELLIDO_DIRE_ACARGO'] ?></td>
-                                <td class="col-md-10"><?php echo $row['CELULAR_DIR'] ?></td>
-                                <td class="col-md-10"><?php echo $row['Column_1er_Grado'] ?></td>
-                                <td class="col-md-10"><?php echo $row['Column_2do_Grado'] ?></td>
-                                <td class="col-md-10"><?php echo $row['Column_3er_Grado'] ?></td>
-                                <td class="col-md-10"><?php echo $row['Column_4to_Grado'] ?></td>
-                                <td class="col-md-10"><?php echo $row['Column_5to_Grado'] ?></td>
-                                <td class="col-md-10"><?php echo $row['Column_6to_Grado'] ?></td>
-                                <td class="col-md-10"><?php echo $row['Column_7mo_Grado'] ?></td>
-                                <td class="col-md-10"><?php echo $row['Niv'] ?></td>
-                                <td class="col-md-10"><?php echo $row['Acel'] ?></td>
-                                <td class="col-md-10"><?php echo $row['TOTAL_SECCIONES'] ?></td>
-                                <td class="col-md-10"><?php echo $row['Column_1er_Grado_1'] ?></td>
-                                <td class="col-md-10"><?php echo $row['Column_2do_Grado_1'] ?></td>
-                                <td class="col-md-10"><?php echo $row['Column_3er_Grado_1'] ?></td>
-                                <td class="col-md-10"><?php echo $row['Column_4to_Grado_1'] ?></td>
-                                <td class="col-md-10"><?php echo $row['Column_5to_Grado_1'] ?></td>
-                                <td class="col-md-10"><?php echo $row['Column_6to_Grado_1'] ?></td>
-                                <td class="col-md-10"><?php echo $row['Column_7mo_Grado_1'] ?></td>
-                                <td class="col-md-10"><?php echo $row['Niv_1'] ?></td>
-                                <td class="col-md-10"><?php echo $row['Acel_1'] ?></td>
-                                <td class="col-md-10"><?php echo $row['Total'] ?></td>
-                                <td class="col-md-10"><?php echo $row['MAIL_OFICIAL'] ?></td>
-                                <td class="col-md-10"><?php echo $row['DIRECCION_SUPERVISI_N'] ?></td>
-                                <td class="col-md-10"><?php echo $row['TELEFONO_SUPERVISION'] ?></td>
-                                <td class="col-md-10"><?php echo $row['APELLIDO_NOMBRE_SUPERVISOR'] ?></td>
-                                <td class="col-md-10"><?php echo $row['TELEFONO_DEL_SUPERVISOR_A'] ?></td>
-                                <td class="col-md-10"><?php echo $row['TIENE_CASERO'] ?></td>
-                                <td class="col-md-10"><?php echo $row['NOMBRE_CASERO'] ?></td>
-                                <td class="col-md-10"><?php echo $row['TELEFONO_1'] ?></td>
-                                <td><a href="update.php?id=<?php echo $row['ID'];?>" class="btn btn-success">Editar</a></td>
-                                <td><a href="delete.php?id=<?php echo $row['ID'];?>" class="btn btn-danger">Eliminar</a></td>
+                                    <th scope="row"><?php echo $row['ID'] ?></th>
+                                    <td class="col-md-10"><?php echo $row['NOMBRE_ESTABLECIMIENTO'] ?></td>
+                                    <td class="col-md-10"><?php echo $row['DE'] ?></td>
+                                    <td class="col-md-10"><?php echo $row['TIPO_JORNADA'] ?></td>
+                                    <td class="col-md-10"><?php echo $row['HORARIO'] ?></td>
+                                    <td class="col-md-10"><?php echo $row['SALAS_INICIAL'] ?></td>
+                                    <td class="col-md-10"><?php echo $row['DIRECCION'] ?></td>
+                                    <td class="col-md-10"><?php echo $row['TELEFONO'] ?></td>
+                                    <td class="col-md-10"><?php echo $row['NOMBRE_APELLIDO_DIR_TITULAR'] ?></td>
+                                    <td class="col-md-10"><?php echo $row['NOMBRE_APELLIDO_DIRE_ACARGO'] ?></td>
+                                    <td class="col-md-10"><?php echo $row['CELULAR_DIR'] ?></td>
+                                    <td class="col-md-10"><?php echo $row['Column_1er_Grado'] ?></td>
+                                    <td class="col-md-10"><?php echo $row['Column_2do_Grado'] ?></td>
+                                    <td class="col-md-10"><?php echo $row['Column_3er_Grado'] ?></td>
+                                    <td class="col-md-10"><?php echo $row['Column_4to_Grado'] ?></td>
+                                    <td class="col-md-10"><?php echo $row['Column_5to_Grado'] ?></td>
+                                    <td class="col-md-10"><?php echo $row['Column_6to_Grado'] ?></td>
+                                    <td class="col-md-10"><?php echo $row['Column_7mo_Grado'] ?></td>
+                                    <td class="col-md-10"><?php echo $row['Niv'] ?></td>
+                                    <td class="col-md-10"><?php echo $row['Acel'] ?></td>
+                                    <td class="col-md-10"><?php echo $row['TOTAL_SECCIONES'] ?></td>
+                                    <td class="col-md-10"><?php echo $row['Column_1er_Grado_1'] ?></td>
+                                    <td class="col-md-10"><?php echo $row['Column_2do_Grado_1'] ?></td>
+                                    <td class="col-md-10"><?php echo $row['Column_3er_Grado_1'] ?></td>
+                                    <td class="col-md-10"><?php echo $row['Column_4to_Grado_1'] ?></td>
+                                    <td class="col-md-10"><?php echo $row['Column_5to_Grado_1'] ?></td>
+                                    <td class="col-md-10"><?php echo $row['Column_6to_Grado_1'] ?></td>
+                                    <td class="col-md-10"><?php echo $row['Column_7mo_Grado_1'] ?></td>
+                                    <td class="col-md-10"><?php echo $row['Niv_1'] ?></td>
+                                    <td class="col-md-10"><?php echo $row['Acel_1'] ?></td>
+                                    <td class="col-md-10"><?php echo $row['Total'] ?></td>
+                                    <td class="col-md-10"><?php echo $row['MAIL_OFICIAL'] ?></td>
+                                    <td class="col-md-10"><?php echo $row['DIRECCION_SUPERVISI_N'] ?></td>
+                                    <td class="col-md-10"><?php echo $row['TELEFONO_SUPERVISION'] ?></td>
+                                    <td class="col-md-10"><?php echo $row['APELLIDO_NOMBRE_SUPERVISOR'] ?></td>
+                                    <td class="col-md-10"><?php echo $row['TELEFONO_DEL_SUPERVISOR_A'] ?></td>
+                                    <td class="col-md-10"><?php echo $row['TIENE_CASERO'] ?></td>
+                                    <td class="col-md-10"><?php echo $row['NOMBRE_CASERO'] ?></td>
+                                    <td class="col-md-10"><?php echo $row['TELEFONO_1'] ?></td>
+                                    <td><a href="update.php?id=<?php echo $row['ID'];?>" class="btn btn-success">Editar</a></td>
+                                    <!--<td><a href="delete.php?id=<?php echo $row['ID'];?>" class="btn btn-danger">Eliminar</a></td>-->
                             </tr>
                                 <?php }; ?>
                             <?php endwhile; ?>
@@ -148,7 +143,7 @@
      
                 
                 <div class="col-md-10 justify-content">
-                        <a href="index.php" class="btn btn-warning">Volver</a> 
+                            <a href="index.php" class="btn btn-warning">Volver</a>                         
                  </div>  
                 <?php endif; ?>                            
             </div>
@@ -156,7 +151,7 @@
     </div>
 
 
-<!-- Modal -->
+<!-- Modal 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -182,7 +177,7 @@
       </div>
     </div>
   </div>
-</div>
+</div>-->
 
 
 </body>

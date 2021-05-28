@@ -22,24 +22,44 @@ $rows = $db-> query($sql);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <title>DGEGE -Actualizar Matriculas</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">    
+    <title>DGEGE -Actualizar Información</title>
 </head>
 
 <body>
-    <div class="container">
+    <div class="container">         
         <div class="row justify-content-center">
-            <div class="col-lg-10 col-md-offset-2 mb-5 mt-5 ">
-                <h2 class="text-center mb-5">ACTUALIZACIÓN INFORMACIÓN</h2>
-            </div>
-            <!--Search bar-->
-            <div class="col-lg-10 text-center">
+                      
+            <!--<div class="col-lg-10 col-md-offset-2 mb-2 mt-5 ">
+              <h2 class="text-center mb-5">ACTUALIZACIÓN INFORMACIÓN</h2>                
+            </div>-->
+            
+            <!--Search bar1 
+            <div class="5">
                 <h4 >Ingresa código de carga 🔎 </h4> 
                   <form action="search.php" method="post" class="form-group">
-                    <input type="text" placeholder="Ingresa el código de carga y presiona enter" name="search" class="form-control">
+                    <input type="password" placeholder="Ingresa el código de carga y presiona enter" name="search" autocomplete="off" class="form-control">
                   </form>                
-            </div>
+            </div>-->
+
+            <!-- search bar3 -->
+            
+          <div class="search col-lg-10 text-center mb-2">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Etevos.png" width="200"alt="">
+              <h2 class="text-center">ACTUALIZACIÓN INFORMACIÓN</h2>
+              <h3>Clickea la lupa e ingresa tu código de carga</h3>
+              <div>
+              <form action="search.php" method="post" class="form-group">
+                <input type="password" placeholder="Código de carga y tecla enter" name="search" autocomplete="off" >
+              </div>
+              </form>
+          </div>
+            
+
+
+            
             <!-- DATA TABLE 
             <div class="col-lg-11 col-lg-offset-1">
                 <table class="table-responsive table-striped table-hover">
@@ -133,39 +153,10 @@ $rows = $db-> query($sql);
                         </tr>
                             <?php endwhile; ?>
                     </tbody>
-                </table>-->                             
-            </div>
+                </table>                             
+            </div>-->
         </div>
     </div>
-
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="myModal">Nueva tarea</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      
-         <form method="post" action="add.php">
-            <div class="form-group">
-                <label for="">Nombre Tarea</label>
-                <input type="text" required name="task" class="form-control">         
-            </div>
-            <input type="submit" name="send" value="Agregar tarea" class="btn btn-success">            
-         </form>
-         
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 
 </body>

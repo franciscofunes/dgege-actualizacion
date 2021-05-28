@@ -2,9 +2,9 @@
 
 <?php include 'db.php';
 
-$id = (int)$_GET['ID'];
+$id = (int)$_GET['id'];
 
-$sql = "select * from baseprimari2 where ID= '$id'";
+$sql = "select * from baseprimaria2 where ID= '$id'";
 
 $rows = $db-> query($sql);
 
@@ -13,14 +13,22 @@ $row = $rows->fetch_assoc();
 
 
 if (isset($_POST['send'])) {
-    $task = htmlspecialchars($_POST['task']);
+    $nombre_escuela = htmlspecialchars($_POST['nombre_establecimiento']);
+    $de = htmlspecialchars($_POST['de']);
+    $tipo_jornada = htmlspecialchars($_POST['tipo_jornada']);
+    $horario = htmlspecialchars($_POST['horario']);
+    $salas_inicial = htmlspecialchars($_POST['salas_inicial']);
+    $direccion = htmlspecialchars($_POST['direccion']);
+    $telefono = htmlspecialchars($_POST['telefono']);
 
-    $sql2 = "update task set name= '$task' where id ='$id'";
+    $sql2 = "UPDATE baseprimaria2 SET NOMBRE_ESTABLECIMIENTO= '$nombre_escuela' WHERE ID ='$id'";
+
+
     
     $val = $db->query($sql2);
 
     if ($val) {
-        echo "<script type='text/javascript'>window.location.href = 'index.php';</script>";
+        echo "<script type='text/javascript'>window.location.href = 'update.php';</script>";
         exit();
     };
 }
@@ -41,13 +49,31 @@ if (isset($_POST['send'])) {
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-auto col-md-offset-2 mb-5 mt-5">
-                <h2 class="text-center mb-5">EDITAR TAREA ✏️ </h2>
+                <h2 class="text-center mb-5">Actualizar Información ✏️ </h2>
             </div>     
             <div class="col-md-10 col-md-offset-1">
                 <form method="post">
                     <div class="form-group">
-                        <label for="">Nombre Tarea</label>
-                        <input type="text" required name="task" value="<?php echo $row['name']?>" class="form-control">         
+                        <label for="">Nombre Escuela</label>
+                        <input type="text" name="nombre_establecimiento" required value="<?php echo $row['NOMBRE_ESTABLECIMIENTO']?>" class="form-control"> 
+
+                        <label for="">DE</label>
+                        <input type="text" name="de" required value="<?php echo $row['DE']?>" class="form-control"> 
+
+                        <label for="">Tipo de Jornada</label>
+                        <input type="text" name="tipo_jornada" required value="<?php echo $row['TIPO_JORNADA']?>" class="form-control"> 
+
+                        <label for="">Horario</label>
+                        <input type="text" name="horario" required value="<?php echo $row['HORARIO']?>" class="form-control"> 
+
+                        <label for="">Salas inicial</label>
+                        <input type="text" name="salas_inicial" required value="<?php echo $row['SALAS_INICIAL']?>" class="form-control"> 
+
+                        <label for="">Dirección</label>
+                        <input type="text" name="direccion" required value="<?php echo $row['DIRECCION']?>" class="form-control"> 
+
+                        <label for="">Télefono</label>
+                        <input type="text" name="telefono" required value="<?php echo $row['TELEFONO']?>" class="form-control">      
                     </div>
                     <input type="submit" name="send" value="Actualizar" class="btn btn-success">&nbsp;  
                     <a href="index.php" class="btn btn-warning">Cancelar</a>        
