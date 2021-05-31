@@ -85,7 +85,7 @@ if (isset($_POST['send'])) {
     <div class="container mb-5 mt-5">
         <div class="row justify-content-center">
             <div class="col-md-auto col-md-offset-2 mb-2">
-                <h1 class="text-center">Actualizar Información ✏️ </h2>
+                <h1>Actualizar Información ✏️ </h1>
             </div>     
             <div class="col-md-10 col-md-offset-1">
                 <!-- Formulario actualizacion datos -->
@@ -93,7 +93,7 @@ if (isset($_POST['send'])) {
                     <div class="form-group">
                         <div class="row mb-4"> 
                             <div class="col">
-                                <label for="">Nombre Escuela</label>
+                                <label for="">Escuela</label>
                                 <input type="text" name="nombre_establecimiento" required value="<?php echo $row['NOMBRE_ESTABLECIMIENTO']?>" class="form-control">                             
                             </div>
                             <div class="col">
@@ -101,7 +101,7 @@ if (isset($_POST['send'])) {
                                 <input type="text" name="de" required value="<?php echo $row['DE']?>" class="form-control"> 
                             </div>
                             <div class="col">
-                                <label for="">Tipo de Jornada</label>
+                                <label for="">Jornada</label>
                                 <input type="text" name="tipo_jornada" required value="<?php echo $row['TIPO_JORNADA']?>" class="form-control">                            
                             </div>                        
                         </div>
@@ -112,7 +112,7 @@ if (isset($_POST['send'])) {
                                 <input type="text" name="horario" required value="<?php echo $row['HORARIO']?>" class="form-control">                           
                             </div>
                             <div class="col">
-                                <label for="">Salas inicial</label>
+                                <label for="">Sala I.</label>
                                 <input type="text" name="salas_inicial" required value="<?php echo $row['SALAS_INICIAL']?>" class="form-control"> 
                             </div>
                             <div class="col">
@@ -123,15 +123,15 @@ if (isset($_POST['send'])) {
 
                         <div class="row mb-4"> 
                             <div class="col">
-                                <label for="">Télefono</label>
+                                <label for="">Tel. Escuela</label>
                                 <input type="text" name="telefono" required value="<?php echo $row['TELEFONO']?>" class="form-control">                         
                             </div>
                             <div class="col">
-                                <label for="">Director/a Titular</label>
+                                <label for="">Dir. Titular</label>
                                 <input type="text" name="nombre_apellido_dir_titular" required value="<?php echo $row['NOMBRE_APELLIDO_DIR_TITULAR']?>" class="form-control"> 
                             </div>
                             <div class="col">
-                                <label for="">Director/a a cargo</label>
+                                <label for="">Dir. a cargo</label>
                                 <input type="text" name="nombre_apellido_dire_acargo" required value="<?php echo $row['NOMBRE_APELLIDO_DIRE_ACARGO']?>" class="form-control">                         
                             </div>
                             <div class="col">
@@ -181,7 +181,7 @@ if (isset($_POST['send'])) {
                                 <input type="text" name="acel1" required value="<?php echo $row['Acel']?>" class="form-control">                          
                             </div>     
                             <div class="col">
-                                <label for="">Total Secciones</label>
+                                <label for="">Total Secc.</label>
                                 <input type="text" name="total_secciones" required value="<?php echo $row['TOTAL_SECCIONES']?>" class="form-control">                          
                             </div>                       
                         </div>
@@ -240,11 +240,11 @@ if (isset($_POST['send'])) {
                                 <input type="text" name="mail_oficial" required value="<?php echo $row['MAIL_OFICIAL']?>" class="form-control">                             
                             </div>
                             <div class="col">
-                                <label for="">Dir. Supervisión</label>
+                                <label for="">Dir. Sup.</label>
                                 <input type="text" name="direccion_supervision" required value="<?php echo $row['DIRECCION_SUPERVISI_N']?>" class="form-control"> 
                             </div>
                             <div class="col">
-                                <label for="">Tel. Supervisión</label>
+                                <label for="">Tel. Sup.</label>
                                 <input type="text" name="tel_supervision" required value="<?php echo $row['TELEFONO_SUPERVISION']?>" class="form-control">                            
                             </div>                        
                         </div>
@@ -270,7 +270,7 @@ if (isset($_POST['send'])) {
                                 <input type="text" name="nombre_casero" required value="<?php echo $row['NOMBRE_CASERO']?>" class="form-control"> 
                             </div>  
                             <div class="col">
-                                <label for="">Tel. Casero</label>
+                                <label for="">Télefono Casero</label>
                                 <input type="text" name="tel_casero" required value="<?php echo $row['TELEFONO_1']?>" class="form-control"> 
                             </div>                      
                         </div>                   
@@ -282,6 +282,10 @@ if (isset($_POST['send'])) {
         </div>
     </div>
 </body>
+
+<script type="text/javascript">
+window.addEventListener('keydown',function(e){if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){if(e.target.nodeName=='INPUT'&&e.target.type=='text'){e.preventDefault();return false;}}},true);
+</script>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

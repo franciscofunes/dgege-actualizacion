@@ -9,7 +9,7 @@ $db = new Mysqli;
 $db-> connect('remotemysql.com','DwUV5JYpGG', 'RFuMENqx7Y','DwUV5JYpGG');
 
 if(!$db){
-    echo "error database connection";
+    echo "Error conexión a base de datos";
 }
 
 ?>
