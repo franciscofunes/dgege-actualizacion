@@ -53,22 +53,24 @@ if (isset($_POST['send'])) {
     $cel_supervisor = htmlspecialchars($_POST['cel_supervisor']);
     $casero = htmlspecialchars($_POST['casero']);
     $nombre_casero = htmlspecialchars($_POST['nombre_casero']);
-    $tel_casero = htmlspecialchars($_POST['tel_casero']);
+    $tel_casero = htmlspecialchars($_POST['tel_casero']); 
     
     
-    
+    /*$sql2 = "UPDATE baseprimaria2 SET NOMBRE_ESTABLECIMIENTO= '$nombre_escuela',DE= '$de',TIPO_JORNADA= '$tipo_jornada',HORARIO='$horario', SALAS_INICIAL='$salas_inicial'  WHERE ID ='$id'";*/
+
+    /*$sql3 = "UPDATE `attendee` SET `firstname`=:fname,`lastname`=:lname,`dateofbirth`=:dob,`emailaddress`=:email,`contactnumber`=:contact,`specialty_id`=:specialty WHERE attendee_id = :id ";*/
+
+    $sql4 ="UPDATE `baseprimaria2` SET `NOMBRE_ESTABLECIMIENTO`='$nombre_escuela',`DE`='$de',`TIPO_JORNADA`='$tipo_jornada',`HORARIO`='$horario',`SALAS_INICIAL`='$salas_inicial',`DIRECCION`='$direccion',`TELEFONO`='$telefono',`NOMBRE_APELLIDO_DIR_TITULAR`='$nombre_apellido_dir_titular',`NOMBRE_APELLIDO_DIRE_ACARGO`='$nombre_apellido_dire_acargo',`CELULAR_DIR`='$celular_dir',`Column_1er_Grado`='$column_1er_grado',`Column_2do_Grado`='$column_2do_grado',`Column_3er_Grado`='$column_3er_grado',`Column_4to_Grado`='$column_4to_grado',`Column_5to_Grado`='$column_5to_grado',`Column_6to_Grado`='$column_6to_grado',`Column_7mo_Grado`='$column_7mo_grado',`Niv`='$niv1',`Acel`='$acel1',`TOTAL_SECCIONES`='$total_secciones',`Column_1er_Grado_1`='$column_1er_grado2',`Column_2do_Grado_1`='$column_2do_grado2',`Column_3er_Grado_1`='$column_3er_grado2',`Column_4to_Grado_1`='$column_4to_grado2',`Column_5to_Grado_1`='$column_5to_grado2',`Column_6to_Grado_1`='$column_6to_grado2',`Column_7mo_Grado_1`='$column_7mo_grado2',`Niv_1`='$niv2',`Acel_1`='$acel2',`Total`='$total',`MAIL_OFICIAL`='$mail_oficial',`DIRECCION_SUPERVISI_N`='$direccion_supervision',`TELEFONO_SUPERVISION`='$tel_supervision',`APELLIDO_NOMBRE_SUPERVISOR`='$datos_supervisor',`TELEFONO_DEL_SUPERVISOR_A`='$cel_supervisor',`TIENE_CASERO`='$casero',`NOMBRE_CASERO`='$nombre_casero',`TELEFONO_1`='$tel_casero' WHERE ID ='$id'";
+
     
 
 
-    $sql2 = "UPDATE baseprimaria2 SET NOMBRE_ESTABLECIMIENTO= '$nombre_escuela',DE= '$de',TIPO_JORNADA= '$tipo_jornada',  WHERE ID ='$id'";
-
-    $sql3 = "UPDATE `attendee` SET `firstname`=:fname,`lastname`=:lname,`dateofbirth`=:dob,`emailaddress`=:email,`contactnumber`=:contact,`specialty_id`=:specialty WHERE attendee_id = :id ";
-
-
     
-    $val = $db->query($sql2);
+    $val = $db->query($sql4);
 
     if ($val) {
+        $message = "¡Cambios realizados con éxito! ✔️";
+        echo "<script type='text/javascript'>alert('$message');</script>";
         echo "<script type='text/javascript'>window.location.href = 'index.php';</script>";
         exit();
     };
@@ -80,9 +82,9 @@ if (isset($_POST['send'])) {
 
 
 <body>
-    <div class="container mb-5">
+    <div class="container mb-5 mt-5">
         <div class="row justify-content-center">
-            <div class="col-md-auto col-md-offset-2 mb-5 mt-5">
+            <div class="col-md-auto col-md-offset-2 mb-2">
                 <h1 class="text-center">Actualizar Información ✏️ </h2>
             </div>     
             <div class="col-md-10 col-md-offset-1">
@@ -149,23 +151,23 @@ if (isset($_POST['send'])) {
                             </div>
                             <div class="col">
                                 <label for="">3er Grado</label>
-                                <input type="text" name="column_2do_grado" required value="<?php echo $row['Column_3er_Grado']?>" class="form-control">                       
+                                <input type="text" name="column_3er_grado" required value="<?php echo $row['Column_3er_Grado']?>" class="form-control">                       
                             </div>   
                             <div class="col">
                                 <label for="">4to Grado</label>
-                                <input type="text" name="column_2do_grado" required value="<?php echo $row['Column_4to_Grado']?>" class="form-control">                     
+                                <input type="text" name="column_4to_grado" required value="<?php echo $row['Column_4to_Grado']?>" class="form-control">                     
                             </div> 
                             <div class="col">
                                 <label for="">5to Grado</label>
-                                <input type="text" name="column_2do_grado" required value="<?php echo $row['Column_5to_Grado']?>" class="form-control">                    
+                                <input type="text" name="column_5to_grado" required value="<?php echo $row['Column_5to_Grado']?>" class="form-control">                    
                             </div>   
                             <div class="col">
                                 <label for="">6to Grado</label>
-                                <input type="text" name="column_2do_grado" required value="<?php echo $row['Column_6to_Grado']?>" class="form-control">                     
+                                <input type="text" name="column_6to_grado" required value="<?php echo $row['Column_6to_Grado']?>" class="form-control">                     
                             </div> 
                             <div class="col">
                                 <label for="">7mo Grado</label>
-                                <input type="text" name="column_2do_grado" required value="<?php echo $row['Column_7mo_Grado']?>" class="form-control">                     
+                                <input type="text" name="column_7mo_grado" required value="<?php echo $row['Column_7mo_Grado']?>" class="form-control">                     
                             </div>                             
                         </div>  
 
@@ -196,23 +198,23 @@ if (isset($_POST['send'])) {
                             </div>
                             <div class="col">
                                 <label for="">3er Grado</label>
-                                <input type="text" name="column_2do_grado2" required value="<?php echo $row['Column_3er_Grado_1']?>" class="form-control">                       
+                                <input type="text" name="column_3er_grado2" required value="<?php echo $row['Column_3er_Grado_1']?>" class="form-control">                       
                             </div>   
                             <div class="col">
                                 <label for="">4to Grado</label>
-                                <input type="text" name="column_2do_grado2" required value="<?php echo $row['Column_4to_Grado_1']?>" class="form-control">                     
+                                <input type="text" name="column_4to_grado2" required value="<?php echo $row['Column_4to_Grado_1']?>" class="form-control">                     
                             </div> 
                             <div class="col">
                                 <label for="">5to Grado</label>
-                                <input type="text" name="column_2do_grado2" required value="<?php echo $row['Column_5to_Grado_1']?>" class="form-control">                    
+                                <input type="text" name="column_5to_grado2" required value="<?php echo $row['Column_5to_Grado_1']?>" class="form-control">                    
                             </div>   
                             <div class="col">
                                 <label for="">6to Grado</label>
-                                <input type="text" name="column_2do_grado2" required value="<?php echo $row['Column_6to_Grado_1']?>" class="form-control">                     
+                                <input type="text" name="column_6to_grado2" required value="<?php echo $row['Column_6to_Grado_1']?>" class="form-control">                     
                             </div> 
                             <div class="col">
                                 <label for="">7mo Grado</label>
-                                <input type="text" name="column_2do_grado2" required value="<?php echo $row['Column_7mo_Grado_1']?>" class="form-control">                     
+                                <input type="text" name="column_7mo_grado2" required value="<?php echo $row['Column_7mo_Grado_1']?>" class="form-control">                     
                             </div>
                         </div>      
                             

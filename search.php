@@ -7,22 +7,16 @@ include 'db.php';
     if (isset($_POST['search'])) {
         $pass = htmlspecialchars($_POST['search']);
         $sql = "SELECT * FROM baseprimaria2 WHERE PASS_DIRECTOR LIKE '%$pass%' ";
-        $rows = $db-> query($sql);      
-        
+        $rows = $db-> query($sql);  
     }
-
-
-
 ?>
 
-
-
 <body>
-    <div class="container">
+    <div class="container mb-5">
         <div class="row justify-content-center">
-            <div class="col-md-10 col-md-offset-2 mb-5 mt-5 ">
-                <h2 class="text-center mb-5">VISUALIZACIÓN DATOS 🔎 </h2>
-                <button onclick="print()" type="button" class="btn btn-secondary float-right"><i class="bi bi-printer"></i> Imprimir</button>
+            <div class="col-md-10 col-md-offset-2">
+                <h2 class="text-center">VISUALIZACIÓN DATOS 🔎 </h2>
+                <button onclick="print()" type="button" class="btn btn-secondary float-right mb-5"><i class="bi bi-printer"></i> Imprimir</button>
             </div>
             <!-- search logic results -->
             <?php if (mysqli_num_rows($rows) < 1) : ?>
@@ -81,7 +75,7 @@ include 'db.php';
                         <tr>
                         <?php while ($row = $rows ->fetch_assoc()): ?>
                                 <?php if ($row['PASS_DIRECTOR'] === $pass ) { ?>
-                                    <th scope="row"><?php echo $row['ID'] ?></th>
+                                    <th scope="row"># <?php echo $row['ID'] ?></th>
                                     <td class="col-md-10"><?php echo $row['NOMBRE_ESTABLECIMIENTO'] ?></td>
                                     <td class="col-md-10"><?php echo $row['DE'] ?></td>
                                     <td class="col-md-10"><?php echo $row['TIPO_JORNADA'] ?></td>
@@ -120,13 +114,15 @@ include 'db.php';
                                     <td class="col-md-10"><?php echo $row['TIENE_CASERO'] ?></td>
                                     <td class="col-md-10"><?php echo $row['NOMBRE_CASERO'] ?></td>
                                     <td class="col-md-10"><?php echo $row['TELEFONO_1'] ?></td>
-                                    <td><a href="update.php?id=<?php echo $row['ID'];?>" class="btn btn-success">Editar</a></td>
+                                    <td><a href="update.php?id=<?php echo $row['ID'];?>" class="btn btn-success ml-2 mr-2">Editar</a></td>
                                     <!--<td><a href="delete.php?id=<?php echo $row['ID'];?>" class="btn btn-danger">Eliminar</a></td>-->
                             </tr>
                                 <?php }; ?>
                             <?php endwhile; ?>
                     </tbody>             
                 </table>
+
+                
      
                 
                 <div class="col-md-10 justify-content">

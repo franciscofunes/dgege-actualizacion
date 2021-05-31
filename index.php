@@ -11,148 +11,28 @@ $sql = "select * from baseprimaria2 limit ".$start.", ".$perPage." ";
 $total = $db->query("select * from baseprimaria2")->num_rows;
 $pages = ceil($total / $perPage);
 
-
 $rows = $db-> query($sql);
 
 include_once 'includes/header.php';
-
 ?>
-
-
-
-
-
 <body>
     <div class="container">         
         <div class="row justify-content-center">
-                      
-            <!--<div class="col-lg-10 col-md-offset-2 mb-2 mt-5 ">
-              <h2 class="text-center mb-5">ACTUALIZACIÓN INFORMACIÓN</h2>                
-            </div>-->
-            
-            <!--Search bar1 
-            <div class="5">
-                <h4 >Ingresa código de carga 🔎 </h4> 
-                  <form action="search.php" method="post" class="form-group">
-                    <input type="password" placeholder="Ingresa el código de carga y presiona enter" name="search" autocomplete="off" class="form-control">
-                  </form>                
-            </div>-->
-
-            <!-- search bar3 -->
-            
-          <div class="search col-lg-10 text-center mb-2">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Etevos.png" width="250"alt="">
-              <h2 class="text-center">ACTUALIZACIÓN INFORMACIÓN</h2>
-              <h3>Clickea la lupa e ingresa tu código de carga</h3>
-              <div>
-              <form action="search.php" method="post" class="form-group">
-                <input type="password" placeholder="Código de carga y pulsa Enter" name="search" autocomplete="off" >
-              </div>
-              </form>
-          </div>
-            
-
-
-            
-            <!-- DATA TABLE 
-            <div class="col-lg-11 col-lg-offset-1">
-                <table class="table-responsive table-striped table-hover">
-                    <thead>
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Nombre Establecimiento</th>
-                            <th scope="col">DE</th>
-                            <th scope="col">Jornada</th>
-                            <th scope="col">Horario</th>
-                            <th scope="col">Salas Inicial</th>
-                            <th scope="col">Dirección</th>
-                            <th scope="col">Télefono</th>
-                            <th scope="col">Nombre y Apellido Director/a titular</th>
-                            <th scope="col">Nombre y Apellido Director/a a cargo</th>
-                            <th scope="col">Cel. Director/a</th>
-                            <th scope="col">1er Grado</th>
-                            <th scope="col">2do Grado</th>
-                            <th scope="col">3er Grado</th>
-                            <th scope="col">4to Grado</th>
-                            <th scope="col">5to Grado</th>
-                            <th scope="col">6to Grado</th>
-                            <th scope="col">7mo grado</th>
-                            <th scope="col">Niv</th>
-                            <th scope="col">Acel</th>
-                            <th scope="col">Total Secciones</th>
-                            <th scope="col">1er Grado</th>
-                            <th scope="col">2do Grado</th>
-                            <th scope="col">3er Grado</th>
-                            <th scope="col">4to Grado</th>
-                            <th scope="col">5to Grado</th>
-                            <th scope="col">6to Grado</th>
-                            <th scope="col">7mo grado</th>
-                            <th scope="col">Niv</th>
-                            <th scope="col">Acel</th>
-                            <th scope="col">Total Secciones</th>
-                            <th scope="col">Mail oficial</th>
-                            <th scope="col">Dirección Supervisión</th>
-                            <th scope="col">Télefono Supervisión</th>
-                            <th scope="col">Apellido Nombre Supervisor</th>
-                            <th scope="col">Ceular Supervisor</th>
-                            <th scope="col">¿Tiene Casero?</th>
-                            <th scope="col">Nombre Casero</th>
-                            <th scope="col">Télefono Casero</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        <?php while ($row = $rows ->fetch_assoc()): ?>
-                            <th scope="row"><?php echo $row['ID'] ?></th>
-                            <td class="col-md-10"><?php echo $row['NOMBRE_ESTABLECIMIENTO'] ?></td>
-                            <td class="col-md-10"><?php echo $row['DE'] ?></td>
-                            <td class="col-md-10"><?php echo $row['TIPO_JORNADA'] ?></td>
-                            <td class="col-md-10"><?php echo $row['HORARIO'] ?></td>
-                            <td class="col-md-10"><?php echo $row['SALAS_INICIAL'] ?></td>
-                            <td class="col-md-10"><?php echo $row['DIRECCION'] ?></td>
-                            <td class="col-md-10"><?php echo $row['TELEFONO'] ?></td>
-                            <td class="col-md-10"><?php echo $row['NOMBRE_APELLIDO_DIR_TITULAR'] ?></td>
-                            <td class="col-md-10"><?php echo $row['NOMBRE_APELLIDO_DIRE_ACARGO'] ?></td>
-                            <td class="col-md-10"><?php echo $row['CELULAR_DIR'] ?></td>
-                            <td class="col-md-10"><?php echo $row['Column_1er_Grado'] ?></td>
-                            <td class="col-md-10"><?php echo $row['Column_2do_Grado'] ?></td>
-                            <td class="col-md-10"><?php echo $row['Column_3er_Grado'] ?></td>
-                            <td class="col-md-10"><?php echo $row['Column_4to_Grado'] ?></td>
-                            <td class="col-md-10"><?php echo $row['Column_5to_Grado'] ?></td>
-                            <td class="col-md-10"><?php echo $row['Column_6to_Grado'] ?></td>
-                            <td class="col-md-10"><?php echo $row['Column_7mo_Grado'] ?></td>
-                            <td class="col-md-10"><?php echo $row['Niv'] ?></td>
-                            <td class="col-md-10"><?php echo $row['Acel'] ?></td>
-                            <td class="col-md-10"><?php echo $row['TOTAL_SECCIONES'] ?></td>
-                            <td class="col-md-10"><?php echo $row['Column_1er_Grado_1'] ?></td>
-                            <td class="col-md-10"><?php echo $row['Column_2do_Grado_1'] ?></td>
-                            <td class="col-md-10"><?php echo $row['Column_3er_Grado_1'] ?></td>
-                            <td class="col-md-10"><?php echo $row['Column_4to_Grado_1'] ?></td>
-                            <td class="col-md-10"><?php echo $row['Column_5to_Grado_1'] ?></td>
-                            <td class="col-md-10"><?php echo $row['Column_6to_Grado_1'] ?></td>
-                            <td class="col-md-10"><?php echo $row['Column_7mo_Grado_1'] ?></td>
-                            <td class="col-md-10"><?php echo $row['Niv_1'] ?></td>
-                            <td class="col-md-10"><?php echo $row['Acel_1'] ?></td>
-                            <td class="col-md-10"><?php echo $row['Total'] ?></td>
-                            <td class="col-md-10"><?php echo $row['MAIL_OFICIAL'] ?></td>
-                            <td class="col-md-10"><?php echo $row['DIRECCION_SUPERVISI_N'] ?></td>
-                            <td class="col-md-10"><?php echo $row['TELEFONO_SUPERVISION'] ?></td>
-                            <td class="col-md-10"><?php echo $row['APELLIDO_NOMBRE_SUPERVISOR'] ?></td>
-                            <td class="col-md-10"><?php echo $row['TELEFONO_DEL_SUPERVISOR_A'] ?></td>
-                            <td class="col-md-10"><?php echo $row['TIENE_CASERO'] ?></td>
-                            <td class="col-md-10"><?php echo $row['NOMBRE_CASERO'] ?></td>
-                            <td class="col-md-10"><?php echo $row['TELEFONO_1'] ?></td>
-                            <td><a href="update.php?id=<?php echo $row['ID'];?>" class="btn btn-success">Editar</a></td>
-                            <td><a href="delete.php?id=<?php echo $row['ID'];?>" class="btn btn-danger">Eliminar</a></td>
-                        </tr>
-                            <?php endwhile; ?>
-                    </tbody>
-                </table>                             
-            </div>-->
+          <!-- search bar -->            
+            <div class="search col-lg-10 text-center mb-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/Etevos.png" width="250"alt="logo bs as">
+                <h2 class="text-center">ACTUALIZACIÓN INFORMACIÓN</h2>
+                <h3>Clickea la lupa e ingresa tu código de carga</h3>
+                <div>
+                <form action="search.php" method="post" class="form-group">
+                    <input type="password" placeholder="Código de carga y pulsa Enter" name="search" autocomplete="off" >
+                </form>
+            </div>                  
         </div>
+        
     </div>
-
-
+    
+    
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
