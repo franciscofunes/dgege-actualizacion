@@ -114,7 +114,9 @@ include 'db.php';
                                     <td class="col-md-10"><?php echo $row['TIENE_CASERO'] ?></td>
                                     <td class="col-md-10"><?php echo $row['NOMBRE_CASERO'] ?></td>
                                     <td class="col-md-10"><?php echo $row['TELEFONO_1'] ?></td>
-                                    <td><a href="update.php?id=<?php echo $row['ID'];?>" class="btn btn-success ml-2 mr-2">Editar</a></td>
+                                    <td><a href="index.php" class="btn btn-success ml-2 mr-2">Ok</a></td>
+                                    <td><a href="update.php?id=<?php echo $row['ID'];?>" class="btn btn-primary ml-2 mr-2">Editar</a></td>
+                                    
                                     <!--<td><a href="delete.php?id=<?php echo $row['ID'];?>" class="btn btn-danger">Eliminar</a></td>-->
                             </tr>
                                 <?php }; ?>

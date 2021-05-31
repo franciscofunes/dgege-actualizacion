@@ -1,19 +1,7 @@
 <!DOCTYPE html>
 
-<?php include 'db.php';
-
-$page = (isset($_GET['page']) ? (int)$_GET['page'] : 1);
-$perPage = (isset($_GET['per-page']) && (int)$_GET['per-page'] <= 50 ? (int)$_GET['per-page'] : 5);
-
-$start = ($page > 1) ? ($page * $perPage) - $perPage : 0;
-
-$sql = "select * from baseprimaria2 limit ".$start.", ".$perPage." ";
-$total = $db->query("select * from baseprimaria2")->num_rows;
-$pages = ceil($total / $perPage);
-
-$rows = $db-> query($sql);
-
-include_once 'includes/header.php';
+<?php 
+    include_once 'includes/header.php';
 ?>
 <body>
     <div class="container">         
