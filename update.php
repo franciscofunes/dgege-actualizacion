@@ -275,7 +275,7 @@ if (isset($_POST['send'])) {
                             </div>                      
                         </div>                   
                     </div>
-                    <input type="submit" name="send" value="Actualizar" class="btn btn-success">&nbsp;  
+                    <input type="submit" name="send" value="Guardar" class="btn btn-success">&nbsp;  
                     <a href="index.php" class="btn btn-warning">Cancelar</a>        
                 </form>
             </div>     
