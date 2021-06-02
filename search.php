@@ -15,7 +15,7 @@ include 'db.php';
     <div class="container mb-5">
         <div class="row justify-content-center">
             <div class="col-md-10 col-md-offset-2">
-                <h2 class="text-center">VISUALIZACIÓN DATOS 🔎 </h2>
+                <h1 class="text-center">VISUALIZACIÓN DATOS 🔎</h1>
                 <button onclick="print()" type="button" class="btn btn-secondary float-right mb-5"><i class="bi bi-printer"></i> Imprimir</button>
             </div>
             <!-- search logic results -->
@@ -163,7 +163,9 @@ include 'db.php';
     </div>
   </div>
 </div>-->
-
+<script type="text/javascript">
+window.addEventListener('keydown',function(e){if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){if(e.target.nodeName=='INPUT'&&e.target.type=='text'){e.preventDefault();return false;}}},true);
+</script>
 
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
