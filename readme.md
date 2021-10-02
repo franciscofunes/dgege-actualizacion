@@ -1,6 +1,8 @@
+## PHP Web App for updating MySQL database
+
 **I did an app for updating information regarding publics schools in Argentina, CABA**
 
-
+<img src="https://i.ibb.co/QNyWXv5/DGEGE-Actualizar-Informaci-n.png" alt="desktop view"> </img>
 ### Built With
 
 * [Bootstrap](https://getbootstrap.com)
